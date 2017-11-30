@@ -34,10 +34,6 @@ $(document).ready(function () {
             }
         }
 
-      //  function displayPcTurn(){
-      //      $('.box2').addClass(turnPc+"1");
-       // }
-
         function checkStone() {
             if (turnPc == 'Spock' || turnPc == 'Sheet') {
                 console.log('You Loose');
