@@ -54,6 +54,12 @@ $(document).ready(function () {
                 $('#dispPcScore').html(scorePc);
 
 
+                function dispPopUp() {
+    $("#popupdisp").css({'display' :"block"});
+    setTimeout(function(){$("#popupdisp").css({'display' : "none"});},10000);
+}
+
+
                 function displayPcChoice() {
                     if (turnPc == "Stone") {
                         $('#Stone').addClass(turnPc + "1");
@@ -177,6 +183,8 @@ $(document).ready(function () {
                         checkSpoke();
                     }
                     displayPcChoice();
+                    setTimeout(dispPopUp(),10000);
+
                 }
 
             });
