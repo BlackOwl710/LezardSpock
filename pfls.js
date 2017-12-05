@@ -67,13 +67,19 @@ $(document).ready(function () {
                 function checkWin(){
                     if(loose == 1){
                         $('.whatHappen').html('You Loose !');
+                        $('.whatHappen').after("<img id = 'loose' src ='asset/loose.gif'>");
                     }
                     else if(win == 1){
                         $('.whatHappen').html('You bite my little shinny metal ass !');
+                        $('.whatHappen').after("<img id = 'win' src ='asset/win.gif'>");
                     }
                     else if (eq == 1){
                         $('.whatHappen').html('Equality');
+                        $('.whatHappen').after("<img id = 'eq' src ='asset/eq.gif'>"); 
                     }
+                    win = 0;
+                    loose = 0;
+                    eq = 0;
                 }
 
 
@@ -107,7 +113,7 @@ $(document).ready(function () {
                         scorePlayer += 1;
                         console.log(scorePc);
                         turn += 1;
-                        loose = 1;
+                        win = 1;
                     }
                     else {
                         turn += 1;
