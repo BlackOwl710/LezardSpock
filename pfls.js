@@ -10,8 +10,6 @@ $(document).ready(function () {
             'margin-right': '20%',
         });
 
-        alert(setTurnp);
-
         $('#pcScore').css({
             'position': 'absolute',
             'display': 'flex',
@@ -40,8 +38,12 @@ $(document).ready(function () {
         var setTurnp = $('#setTurn').val();
         var setTurn = parseInt(setTurnp);
         var halfSetTurn = setTurn / 2;
-
-
+        var win = 0;
+        var loose = 0;
+        var eq = 0;
+        
+        $('#dispPlayerScore').html(scorePlayer);
+        $('#dispPcScore').html(scorePc);
 
         if (setTurn % 2 !== 0) {
 
@@ -55,9 +57,24 @@ $(document).ready(function () {
 
 
                 function dispPopUp() {
-    $("#popupdisp").css({'display' :"block"});
-    setTimeout(function(){$("#popupdisp").css({'display' : "none"});},10000);
-}
+                    $("#popupdisp").css({ 'display': "block" });
+                    $('#dispPlayerScore').html(scorePlayer);
+                    $('#dispPcScore').html(scorePc);
+                    setTimeout(function () { $("#popupdisp").css({ 'display': "none" }); }, 10000);
+                    
+                }
+
+                function checkWin(){
+                    if(loose == 1){
+                        $('.whatHappen').html('You Loose !');
+                    }
+                    else if(win == 1){
+                        $('.whatHappen').html('You bite my little shinny metal ass !');
+                    }
+                    else if (eq == 1){
+                        $('.whatHappen').html('Equality');
+                    }
+                }
 
 
                 function displayPcChoice() {
@@ -80,90 +97,97 @@ $(document).ready(function () {
 
                 function checkStone() {
                     if (turnPc == 'Spock' || turnPc == 'Sheet') {
-                        console.log('You Loose');
                         scorePc += 1;
                         console.log(scorePc);
                         console.log(turnPc);
                         turn += 1;
+                        loose = 1;
                     }
                     else if (turnPc == 'Lezard' || turnPc == 'Cisor') {
-                        console.log('You Win !');
                         scorePlayer += 1;
                         console.log(scorePc);
                         turn += 1;
+                        loose = 1;
                     }
                     else {
-                        console.log('Equality');
                         turn += 1;
+                        eq = 1;
                     }
+                    checkWin();
+                    
                 }
 
                 function checkSheet() {
                     if (turnPc == 'Stone' || turnPc == 'Spock') {
-                        console.log('You win !');
                         scorePlayer += 1;
                         turn += 1;
+                        win = 1;
                     }
                     else if (turnPc == 'Cisor' || turnPc == 'Lezard') {
-                        console.log('You Loose !');
                         scorePc += 1;
                         turn += 1;
+                        loose = 1;
                     }
                     else {
-                        console.log('Equality');
                         turn += 1;
+                        eq = 0;
                     }
+                    checkWin();                    
                 }
 
                 function checkCisor() {
                     if (turnPc == 'Stone' || turnPc == 'Spock') {
-                        console.log('You Loose !');
                         scorePc += 1;
                         turn += 1;
+                        loose = 1;
                     }
                     else if (turnPc == 'Sheet' || turnPlayer == 'Lezard') {
-                        console.log('You Win !');
                         scorePlayer += 1;
                         turn += 1;
+                        win = 1;
                     }
                     else {
-                        console.log('Equality');
                         turn += 1;
+                        eq = 1;
                     }
+                    checkWin();                    
                 }
 
                 function checkLezard() {
                     if (turnPc == 'Stone' || turnPc == 'Cisor') {
-                        console.log('You Loose');
                         scorePc += 1;
                         turn += 1;
+                        loose = 1;
                     }
                     else if (turnPc == 'Sheet' || turnPc == 'Spock') {
-                        console.log('You Win !');
                         scorePlayer += 1;
                         turn += 1;
+                        win = 1;
                     }
                     else {
-                        console.log('Equality');
                         turn += 1;
+                        eq = 1;
                     }
+                    checkWin();                    
                 }
 
                 function checkSpock() {
                     if (turnPc == 'Stone' || turnPc == 'Cisor') {
-                        console.log('You win !');
                         scorePlayer += 1;
                         turn += 1;
+                        win = 1;
                     }
                     else if (turnPc == 'Sheet' || turnPc == 'Lezard') {
-                        console.log('You Loose');
                         scorePc += 1;
                         turn += 1;
+                        loose = 1;
                     }
                     else {
                         console.log('Equality');
                         turn += 1;
+                        eq = 1;
                     }
+                    checkWin();
                 }
 
                 if (scorePlayer < halfSetTurn && scorePc < halfSetTurn && turn !== setTurn) {
@@ -183,7 +207,7 @@ $(document).ready(function () {
                         checkSpoke();
                     }
                     displayPcChoice();
-                    setTimeout(dispPopUp(),10000);
+                    setTimeout(dispPopUp(), 10000);
 
                 }
 
