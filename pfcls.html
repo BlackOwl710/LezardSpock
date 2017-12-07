@@ -11,14 +11,21 @@
 <body>
     <h1> Pierre Feuille Ciseaux Lezard Spock</h1>
     <h2>par Docteur Sheldon Cooper,</h2>
-    <div id = 'pcScore'><p id = "dispPcScore"></p><img id = 'bender' src = 'asset/bender.jpg'></div>
-    <div id = 'playerScore'><p id = "dispPlayerScore"></p><img id = 'fry' src = 'asset/fry.png'></div>
+    <div id='pcScore'>
+        <p id="dispPcScore"></p>
+        <img id='bender' src='asset/bender.jpg'>
+    </div>
+    <div id='playerScore'>
+        <p id="dispPlayerScore"></p>
+        <img id='fry' src='asset/fry.png'>
+    </div>
     <div id='all'>
         <div id='rules'>
-            
-            <ul><p>Voici les combinaisons permettant de remporter (ou perdre) la partie :
-            </p>
-                <li>Lesciseaux coupent le papier,</li>
+
+            <ul>
+                <p>Voici les combinaisons permettant de remporter (ou perdre) la partie :
+                </p>
+                <li>Les ciseaux coupent le papier,</li>
                 <li>Le papier bat la pierre,</li>
                 <li>La pierre écrase le lézard,</li>
                 <li>Le lézard empoisonne Spock.</li>
@@ -28,12 +35,20 @@
                 <li>Le papier repousse Spock,</li>
                 <li>Spock détruit la pierre.</li>
                 <li>La pierre bat les ciseaux</li>
-                <input id = 'setTurn'type ='text'>
-                <button id = 'offRules'>OK ?</button>
+                <input id='setTurn' type='text'>
+                <button id='offRules'>OK ?</button>
             </ul>
-           
+
         </div>
-        <div id = "popupdisp"><p class ='whatHappen'></p><img id ="loosewingif" src=''></div>
+        <div id='formPlayerName'>
+            <p>Put your name on the form bruh' please !!</p>
+            <input id='playerName' type='text'>
+            <button id='play'>Let's Play bruh'</button>
+        </div>
+        <div id="popupdisp">
+            <p class='whatHappen'></p>
+        </div>
+
         <div id='playerInterface'>
             <div id="container2">
                 <img id="stone" class="box" src="asset/pierre.jpg">
@@ -50,7 +65,11 @@
                 <img id="Spock" class="box2" src="asset/spock.jpg">
             </div>
         </div>
+        <div id='reset'>
+            <button id='reload'>Rejouer</button>
+        </div>
         <script src="jquery-3.2.1.min.js"></script>
+        <script src="gamefct.js"></script>
         <script src="pfls.js"></script>
 </body>
 
