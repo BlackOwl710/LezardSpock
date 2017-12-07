@@ -33,7 +33,8 @@ body{
 }
 
 
-#rules{ flex
+#rules{ 
+    display : flex;
     width: 40%;
     padding: 1em;
     align-content: center;
@@ -43,14 +44,16 @@ body{
 }
 
 #formPlayerName{
+    position: absolute;
     display : none;
     flex-direction: column;
+    top: 25% ;
 }
 
 #reset{
     display: none;
     position : absolute;
-    top : 60%;
+    top : 78%;
     z-index: 1;
 }
 
@@ -92,7 +95,7 @@ ul {
     display : none; 
     position: absolute;
     background-color: rgba(255, 255,255, 0.7);
-    top: 22%;
+    top: 40%;
     align-self: center;
     text-align: center;
     border-radius: 1.5%;
@@ -134,7 +137,7 @@ ul {
     flex-wrap: wrap;
     justify-content: center;
     width: auto;
-    margin-top: 8%;
+    margin-top: 30%;
 
 }
 
@@ -160,6 +163,7 @@ ul {
     justify-content: center;
     width: auto;
     margin-top: 20%;
+    margin-bottom: 20%;
 }
 .box2 {
     margin-left: 1%;

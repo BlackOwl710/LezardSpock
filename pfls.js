@@ -16,7 +16,7 @@ $(document).ready(function () {
             'position': 'absolute',
             'display': 'flex',
             'flex-direction': 'row-reverse',
-            'top': '45%',
+            'top': '70%',
             'right': '80%',
             'width': '20%',
             'background-color': 'rgba(255, 255,255, 0.7)',
@@ -25,7 +25,7 @@ $(document).ready(function () {
         $('#playerScore').css({
             'position': 'absolute',
             'display': 'flex',
-            'top': '45%',
+            'top': '70%',
             'left': '80%',
             'width': '20%',
             'background-color': 'rgba(255, 255,255, 0.7)',
@@ -42,7 +42,7 @@ $(document).ready(function () {
         var win = 0;
         var loose = 0;
         var eq = 0;
-        
+
         $('#dispPlayerScore').html(scorePlayer);
         $('#dispPcScore').html(scorePc);
 
@@ -60,6 +60,7 @@ $(document).ready(function () {
                     var randPc = Math.floor(Math.random() * 5);
                     var turnPc = boardPcChoices[randPc];
                     var turnPlayer = $(this).attr('id');
+                    console.log('this', $(this))
 
                     $('#dispPlayerScore').html(scorePlayer);
                     $('#dispPcScore').html(scorePc);
@@ -70,22 +71,25 @@ $(document).ready(function () {
                         $('#dispPlayerScore').html(scorePlayer);
                         $('#dispPcScore').html(scorePc);
                         setTimeout(function () { $("#popupdisp").css({ 'display': "none" }); }, 2000);
-                        setTimeout(function () { $('#eq').remove(); }, 2000);
-                        setTimeout(function () { $('#loose').remove(); }, 2000);
-                        setTimeout(function () { $('#win').remove(); }, 2000);
+                        setTimeout(function () { $('#eq').remove(); console.log('remove eq')}, 2000);
+                        setTimeout(function () { $('#loose').remove(); console.log('remove loose') }, 2000);
+                        setTimeout(function () { $('#win').remove(); console.log('remove win') }, 2000);
                     }
 
                     function checkWin() {
-
+                        console.log('checkWIN')
                         if (loose == 1) {
+                            console.log('add loose')
                             $('.whatHappen').html('You Loose !');
                             $('.whatHappen').after("<img id = 'loose' src ='asset/loose.gif'>");
                         }
                         else if (win == 1) {
+                            console.log('add win')
                             $('.whatHappen').html('You bite my little shinny metal ass !');
                             $('.whatHappen').after("<img id = 'win' src ='asset/win.gif'>");
                         }
                         else if (eq == 1) {
+                            console.log('add eq')
                             $('.whatHappen').html('Equality');
                             $('.whatHappen').after("<img id = 'eq' src ='asset/eq.gif'>");
                         }
@@ -226,14 +230,15 @@ $(document).ready(function () {
                         else if (turnPlayer == 'lezard') {
                             checkLezard();
                         }
-                        else if (turnPlayer == 'spoke') {
-                            checkSpoke();
+                        else if (turnPlayer == 'spock') {
+                            checkSpock();
                         }
                         displayPcChoice();
                         dispPopUp();
                         console.log(scorePc, scorePlayer);
                         console.log(turnPc)
                     }
+
 
                 });
 
