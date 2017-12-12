@@ -8,6 +8,7 @@ $(document).ready(function () {
             'flex-direction': 'column',
             'margin-left': '20%',
             'margin-right': '20%',
+            'margin-top' : '-5%',
         });
         $('#formPlayerName').css({ 'display': 'flex' });
         $('#reset').css({ 'display': 'block' });
@@ -35,7 +36,7 @@ $(document).ready(function () {
         var boardPcChoices = ["Stone", "Sheet", "Cisor", "Lezard", "Spock"];
         var scorePlayer = 0;
         var scorePc = 0;
-        var turn = 0;
+        var turn = 1;
         var setTurnp = $('#setTurn').val();
         var setTurn = parseInt(setTurnp);
         var halfSetTurn = setTurn / 2;
@@ -43,25 +44,34 @@ $(document).ready(function () {
         var loose = 0;
         var eq = 0;
 
+
+
         $('#dispPlayerScore').html(scorePlayer);
         $('#dispPcScore').html(scorePc);
 
+
+
+
         $('#play').click(function () {
 
-            var playerName = $('formPlayerName').val()
+            var playerName = $('#playerName').val();
 
+            $('#round').append("<p id='dispRound'>Round " + turn + '</p>');            
             $('#formPlayerName').css({ 'display': 'none' });
             $('#dispPlayerScore').html(scorePlayer);
             $('#dispPcScore').html(scorePc);
+            $('#dispPlayerName').append(playerName);
 
             if (setTurn % 2 !== 0) {
+
 
                 $('.box').click(function () {
                     var randPc = Math.floor(Math.random() * 5);
                     var turnPc = boardPcChoices[randPc];
                     var turnPlayer = $(this).attr('id');
                     console.log('this', $(this))
-
+                    $('#dispRound').remove();
+                    setTimeout(function () {$('#round').append("<p id='dispRound'>Round " + turn + '</p>');}, 2);
                     $('#dispPlayerScore').html(scorePlayer);
                     $('#dispPcScore').html(scorePc);
 
@@ -71,7 +81,7 @@ $(document).ready(function () {
                         $('#dispPlayerScore').html(scorePlayer);
                         $('#dispPcScore').html(scorePc);
                         setTimeout(function () { $("#popupdisp").css({ 'display': "none" }); }, 2000);
-                        setTimeout(function () { $('#eq').remove(); console.log('remove eq')}, 2000);
+                        setTimeout(function () { $('#eq').remove(); console.log('remove eq') }, 2000);
                         setTimeout(function () { $('#loose').remove(); console.log('remove loose') }, 2000);
                         setTimeout(function () { $('#win').remove(); console.log('remove win') }, 2000);
                     }
@@ -217,7 +227,7 @@ $(document).ready(function () {
                         checkWin();
                     }
 
-                    if (scorePlayer < halfSetTurn && scorePc < halfSetTurn && turn !== setTurn) {
+                    if (scorePlayer < halfSetTurn && scorePc < halfSetTurn && turn !== (setTurn+1)) {
                         if (turnPlayer == 'stone') {
                             checkStone();
                         }
@@ -243,7 +253,7 @@ $(document).ready(function () {
                 });
 
             }
-            else { alert('YO !'); };
+            else { alert('Tu Dois donner un chiffre impair si tu veux un gagnant et un perdant'); };
         });
     });
 

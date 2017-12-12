@@ -2,22 +2,25 @@
 <html>
 
 <head>
-    <meta charset="utf-8" />
+    <meta charset='utf-8' />
     <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Cabin' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="pfcls.css">
+    <link rel='stylesheet' type='text/css' href='pfcls.css'>
 </head>
 
 <body>
     <h1> Pierre Feuille Ciseaux Lezard Spock</h1>
     <h2>par Docteur Sheldon Cooper,</h2>
+    <div id="round"></div>
     <div id='pcScore'>
-        <p id="dispPcScore"></p>
+        <p id='dispPcScore'></p>
         <img id='bender' src='asset/bender.jpg'>
+        <p id='dispPcScore'>PC</p>
     </div>
     <div id='playerScore'>
-        <p id="dispPlayerScore"></p>
+        <p id='dispPlayerScore'></p>
         <img id='fry' src='asset/fry.png'>
+        <p id='dispPlayerName'></p>
     </div>
     <div id='all'>
         <div id='rules'>
@@ -41,36 +44,36 @@
 
         </div>
         <div id='formPlayerName'>
-            <p>Put your name on the form bruh' please !!</p>
+            <p id='formTxt'>Put your name on the form bruh' please !!</p>
             <input id='playerName' type='text'>
-            <button id='play'>Let's Play bruh'</button>
+                <button id='play'>Let's Play bruh'</button>
         </div>
-        <div id="popupdisp">
+        <div id='popupdisp'>
             <p class='whatHappen'></p>
         </div>
 
         <div id='playerInterface'>
-            <div id="container2">
-                <img id="stone" class="box" src="asset/pierre.jpg">
-                <img id="cisor" class="box" src="asset/ciseaux.jpg">
-                <img id="sheet" class="box" src="asset/feuille.jpg">
-                <img id="lezard" class="box" src="asset/lezard.jpg">
-                <img id="spock" class="box" src="asset/spock.jpg">
+            <div id='container2'>
+                <img id='stone' class='box' src='asset/pierre.jpg'>
+                <img id='cisor' class='box' src='asset/ciseaux.jpg'>
+                <img id='sheet' class='box' src='asset/feuille.jpg'>
+                <img id='lezard' class='box' src='asset/lezard.jpg'>
+                <img id='spock' class='box' src='asset/spock.jpg'>
             </div>
-            <div id="container3">
-                <img id="Stone" class="box2" src="asset/pierre.jpg">
-                <img id="Cisor" class="box2" src="asset/ciseaux.jpg">
-                <img id="Sheet" class="box2" src="asset/feuille.jpg">
-                <img id="Lezard" class="box2" src="asset/lezard.jpg">
-                <img id="Spock" class="box2" src="asset/spock.jpg">
+            <div id='container3'>
+                <img id='Stone' class='box2' src='asset/pierre.jpg'>
+                <img id='Cisor' class='box2' src='asset/ciseaux.jpg'>
+                <img id='Sheet' class='box2' src='asset/feuille.jpg'>
+                <img id='Lezard' class='box2' src='asset/lezard.jpg'>
+                <img id='Spock' class='box2' src='asset/spock.jpg'>
             </div>
         </div>
         <div id='reset'>
-            <button id='reload'>Rejouer</button>
+            <button id='reload'><a href="http://localhost/Simplon/LezardSpock/pfcls.html?">Reset Baby !</a></button>
         </div>
-        <script src="jquery-3.2.1.min.js"></script>
-        <script src="gamefct.js"></script>
-        <script src="pfls.js"></script>
+        <script src='jquery-3.2.1.min.js'></script>
+        <script src='gamefct.js'></script>
+        <script src='pfls.js'></script>
 </body>
 
 </html>

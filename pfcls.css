@@ -5,6 +5,20 @@ body{
     background-repeat:repeat-y 33%;
 }
 
+#round{
+    position: absolute;
+    display : block;
+    flex-direction: column;
+    top: 25% ;
+    left: 47%;
+}
+
+#dispRound{
+	font-family: 'Lobster', Georgia, Times, serif;    
+    font-size: 2em;
+    color: #ffc000;    
+}
+
 #pcScore{
     display: none;
     
@@ -53,7 +67,7 @@ body{
 #reset{
     display: none;
     position : absolute;
-    top : 78%;
+    top : 65%;
     z-index: 1;
 }
 
@@ -65,7 +79,9 @@ h1 {
 	font-family: 'Lobster', Georgia, Times, serif;
 	font-size: 3em;
     line-height: 1em;
-    text-align: center
+    text-align: center;
+    color: #c4cce0;
+    
 }
 
 h2 {
@@ -73,8 +89,13 @@ h2 {
 	font-size: 2em;
     line-height: 1em;
     text-align: center;
+    color: #c4cce0;
 }
 
+#formTxt{
+    font-family: 'Lobster', Georgia, Times, serif;
+    color: #ffc000;
+}
 
 p {
 	font-family: 'Cabin', Helvetica, Arial, sans-serif;
